@@ -1,0 +1,46 @@
+###
+
+Qudratic solver in flang language
+ax^2 + bx + c = 0
+run: ./flang -f 'quadratic_solver.flang'
+
+Example run:
+a> 2
+b> -5
+c> -3
+Solution:
+x1: -0.500
+x2: 3.000
+
+version: 1.0
+language: flang
+author: mystikkogames ( mystikkogames@protonmail.com )
+license: GPLv2
+
+###
+
+( function *quadratic_solver ( ) :
+
+   	( "a" :printf ) 
+   	( $a :input = ) 
+   	( "b" :printf ) 
+   	( $b :input = ) 
+   	( "c" :printf ) 
+   	( $c :input = ) 
+   	
+   	( $det $b $b * 4 $a $c * * - = )
+   	( if ( $det 0 < ) : ( "No solution: determinant < 0" :print ) ( return ) )
+   	( if ( $a 0 == ) : ( "No solution: not quadratic since a == 0" :print ) ( return ) )
+   	( $x1 $b -1 * $det :sqrt - 2 $a * / = )
+   	( $x2 $b -1 * $det :sqrt + 2 $a * / = )
+   	( "Solution:" :print )
+   	( $x1 "x1: %.3f\n" :printf )
+   	( $x2 "x2: %.3f\n" :printf )
+   	
+)
+
+( function *main ( ) :    
+	( "Quadratic solver ~~~ ax^2 + bx + c = 0" :print )
+    ( *quadratic_solver )
+)
+
