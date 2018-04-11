@@ -1,6 +1,6 @@
 ###
 
-Qudratic solver in flang language
+Quadratic solver in flang language
 ax^2 + bx + c = 0
 run: ./flang -f 'quadratic_solver.flang'
 
