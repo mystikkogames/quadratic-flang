@@ -1,8 +1,6 @@
 # quadratic-flang
 
-quadratic solver in flang
-
-Quadratic solver in flang language
+Quadratic equation solver in flang language
 
 ax^2 + bx + c = 0
 
